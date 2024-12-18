@@ -1,0 +1,96 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,89,65)
+  Font = Font["12"]
+  Text = ("MINotepad")
+  Icon = Picture["minotepad.png"]
+  Arrangement = Arrange.Fill
+  { Menu1 Menu
+    Text = ("File")
+    { mnuNovo Menu
+      Text = ("New")
+      Shortcut = "Ctrl+N"
+    }
+    { Menu5 Menu
+    }
+    { mnuAbrir Menu
+      Text = ("Open")
+      Shortcut = "Ctrl+O"
+    }
+    { Menu6 Menu
+    }
+    { mnuSalvar Menu
+      Text = ("Save")
+      Shortcut = "Ctrl+S"
+    }
+    { mnuSalvarComo Menu
+      Text = ("Save as")
+    }
+    { Menu7 Menu
+    }
+    { mnuSair Menu
+      Text = ("Quit")
+      Shortcut = "Alt+F4"
+    }
+  }
+  { Menu2 Menu
+    Text = ("Edit")
+    { mnuDefazer Menu
+      Text = ("Undo")
+    }
+    { mnuRefazer Menu
+      Text = ("Redo")
+    }
+    { Menu8 Menu
+    }
+    { mnuRecortar Menu
+      Text = ("Cut")
+    }
+    { mnuCopiar Menu
+      Text = ("Copy")
+    }
+    { mnuColar Menu
+      Text = ("Paste")
+    }
+    { Menu9 Menu
+    }
+    { mnuLocalizar Menu
+      Text = ("Search")
+    }
+  }
+  { Menu3 Menu
+    Text = ("View")
+    { mnuExibirNumeros Menu
+      Text = ("Number of Lines")
+    }
+    { mnuExibirVisualizador Menu
+      Text = ("Viewer")
+    }
+    { Menu11 Menu
+    }
+    { mnuQuebraLinha Menu
+      Text = ("Line Break")
+    }
+  }
+  { mnuFormatacao Menu
+    Text = ("Formatting")
+    { mnuFonte Menu
+      Text = ("Font")
+    }
+  }
+  { Menu4 Menu
+    Text = ("About")
+    { mnuApoie Menu
+      Text = ("Support MINotepad")
+    }
+    { Menu10 Menu
+    }
+    { mnuSobre Menu
+      Text = ("About MINotepad")
+    }
+  }
+  { txtEditor TextEditor
+    MoveScaled(0,1,38,23)
+  }
+}

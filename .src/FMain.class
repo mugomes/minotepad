@@ -1,0 +1,205 @@
+' Gambas class file
+
+' Copyright (C) 2004-2024 Murilo Gomes Julio
+' SPDX-License-Identifier: GPL-2.0-only
+
+' Mestre da Info
+' Site: https://www.mestredainfo.com.br
+
+Private sArquivo As String 
+Private sChange As Boolean = False
+
+Private Sub getSetting(nome As String, Optional tipoFloat As Boolean = False) As Variant
+  
+  If Not IsNull(Settings[nome]) Then
+    Return Settings[nome]
+  Else 
+    If tipoFloat = True Then 
+      Return CFloat(10)
+    Else 
+      Return ""
+    Endif 
+  Endif
+  
+End
+
+Private Sub setSetting(nome As String, valor As String)
+  
+  Settings[nome] = valor
+  Settings.Save()
+  
+End
+
+Public Sub Form_Open()
+  
+  Dim sFile As String
+  
+  If Args.Count > 1 Then 
+    sFile = Replace(URL.Decode(Args[1]), "file://", "")
+    If Exist(sFile) Then 
+      sArquivo = sFile
+      txtEditor.Text = File.Load(sArquivo)
+      Me.Text = sArquivo & " - MINotepad"
+    Endif
+  Endif
+  
+  mnuExibirNumeros.Checked = getSetting("exibirnumeros")
+  mnuExibirVisualizador.Checked = getSetting("exibirvisualizador")
+  mnuQuebraLinha.Checked = getSetting("exibirquebradelinha")  
+  txtEditor.ShowLineNumber = getSetting("exibirnumeros")
+  txtEditor.ShowPreview = getSetting("exibirvisualizador")
+  txtEditor.Wrap = getSetting("exibirquebradelinha")
+  txtEditor.Font.Name = getSetting("fontName")
+  txtEditor.Font.Bold = getSetting("fontBold")
+  txtEditor.Font.Italic = getSetting("fontItalic")
+  txtEditor.Font.Underline = getSetting("fontUnderline")
+  txtEditor.Font.Size = getSetting("fontSize", True)
+  
+End
+
+Public Sub mnuExibirNumeros_Click()
+  
+  mnuExibirNumeros.Checked = Not mnuExibirNumeros.Checked
+  txtEditor.ShowLineNumber = mnuExibirNumeros.Checked
+  setSetting("exibirnumeros", mnuExibirNumeros.Checked)
+  
+End
+
+Public Sub mnuExibirVisualizador_Click()
+  
+  mnuExibirVisualizador.Checked = Not mnuExibirVisualizador.Checked
+  txtEditor.ShowPreview = mnuExibirVisualizador.Checked
+  setSetting("exibirvisualizador", mnuExibirVisualizador.Checked)
+  
+End
+
+Public Sub mnuDefazer_Click()
+  
+  txtEditor.Undo()
+  
+End
+
+Public Sub mnuRefazer_Click()
+  
+  txtEditor.Redo()
+  
+End
+
+Public Sub mnuRecortar_Click()
+  
+  txtEditor.Cut()
+  
+End
+
+Public Sub mnuCopiar_Click()
+  
+  txtEditor.Copy()
+  
+End
+
+Public Sub mnuColar_Click()
+  
+  txtEditor.Paste()
+  
+End
+
+Public Sub mnuLocalizar_Click()
+  
+  txtEditor.ShowFindPanel()
+  
+End
+
+Public Sub mnuSobre_Click()
+  
+  FAbout.Show()
+  
+End
+
+Public Sub mnuApoie_Click()
+  
+  Shell "xdg-open \"https://www.mestredainfo.com.br/p/apoie.html\""
+  
+End
+
+Public Sub mnuNovo_Click()
+  
+  txtEditor.Text = ""
+  sArquivo = ""
+  
+End
+
+Public Sub mnuAbrir_Click()
+  
+  Dialog.Title = ("Open File")
+  If Dialog.OpenFile() = False Then 
+    sArquivo = Dialog.Path
+    txtEditor.Text = File.Load(sArquivo)
+    Me.Text = sArquivo & " - MINotepad"
+  Endif
+  
+End
+
+Public Sub mnuSalvar_Click()
+  
+  If sArquivo = "" Then 
+    mnuSalvarComo_Click
+  Else 
+    File.Save(sArquivo, txtEditor.Text)
+  Endif
+  
+End
+
+Public Sub mnuSalvarComo_Click()
+  
+  Dialog.Title = ("Save File")
+  If Dialog.SaveFile() = False Then 
+    sArquivo = Dialog.Path
+    File.Save(sArquivo, txtEditor.Text)
+    Me.Text = sArquivo & " - MINotepad"
+  Endif
+  
+End
+
+Public Sub mnuSair_Click()
+  
+  Quit
+  
+End
+
+Public Sub mnuQuebraLinha_Click()
+  
+  mnuQuebraLinha.Checked = Not mnuQuebraLinha.Checked
+  txtEditor.Wrap = mnuQuebraLinha.Checked
+  setSetting("exibirquebradelinha", mnuQuebraLinha.Checked)
+  
+End
+
+Public Sub mnuFonte_Click()
+
+  Dialog.Font = txtEditor.Font
+  If Dialog.SelectFont() = False Then 
+    txtEditor.Font = Dialog.Font
+    setSetting("fontName", txtEditor.Font.Name)
+    setSetting("fontBold", txtEditor.Font.Bold)
+    setSetting("fontItalic", txtEditor.Font.Italic)
+    setSetting("fontUnderline", txtEditor.Font.Underline)
+    setSetting("fontSize", txtEditor.Font.Size)
+  Endif 
+  
+End
+
+Public Sub Form_Close()
+  
+  If sChange = True Then 
+    If Message.Question(("Do you want to save the changes?"), ("Yes"), ("No")) = 1 Then 
+      mnuSalvar_Click
+    Endif
+  Endif
+  
+End
+
+Public Sub txtEditor_KeyPress()
+  
+  sChange = True
+  
+End
