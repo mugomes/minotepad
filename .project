@@ -2,7 +2,7 @@
 Title=MINotepad
 Startup=FMain
 Icon=minotepad.png
-Version=0.0.2
+Version=0.0.3
 Component=gb.args
 Component=gb.image
 Component=gb.gtk3
