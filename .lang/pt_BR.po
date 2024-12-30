@@ -2,16 +2,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minotepad 3.18.0\n"
-"POT-Creation-Date: 2024-08-26 15:31 UTC\n"
-"PO-Revision-Date: 2024-08-26 15:32 UTC\n"
-"Last-Translator: Murilo Gomes Julio <contatomestredainfo@gmail.com>\n"
+"POT-Creation-Date: 2024-12-30 16:34 UTC\n"
+"PO-Revision-Date: 2024-12-30 16:34 UTC\n"
+"Last-Translator: Mestre da Info <contatomestredainfo@gmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 # gb-ignore
-#: .project:1 FMain.form:38
+#: .project:1 FMain.form:40
 msgid "MINotepad"
 msgstr ""
 
@@ -22,15 +22,19 @@ msgid ""
 " The MINotepad is under license GPL-2.0-only"
 msgstr ""
 
-#: FAbout.form:17 FMain.form:151
+#: FAbout.class:19
+msgid "Version:"
+msgstr "Versão:"
+
+#: FAbout.form:18 FMain.form:160
 msgid "About MINotepad"
 msgstr "Sobre MINotepad"
 
-#: FAbout.form:46
+#: FAbout.form:47
 msgid "Developed by:  Murilo Gomes Julio"
 msgstr "Desenvolvido por: Murilo Gomes Julio"
 
-#: FAbout.form:66
+#: FAbout.form:67
 msgid "License: GPL-2.0-only"
 msgstr "Licença: GPL-2.0-only"
 
@@ -54,86 +58,90 @@ msgstr "Não"
 msgid "Yes"
 msgstr "Sim"
 
-#: FMain.form:43
+#: FMain.form:45
 msgid "File"
 msgstr "Arquivo"
 
-#: FMain.form:46
+#: FMain.form:48
 msgid "New"
 msgstr "Novo"
 
-#: FMain.form:54
+#: FMain.form:56
 msgid "Open"
 msgstr "Abrir"
 
-#: FMain.form:62
+#: FMain.form:64
 msgid "Save"
 msgstr "Salvar"
 
-#: FMain.form:67
+#: FMain.form:69
 msgid "Save as"
 msgstr "Salvar como"
 
-#: FMain.form:74
+#: FMain.form:76
 msgid "Quit"
 msgstr "Sair"
 
-#: FMain.form:80
+#: FMain.form:82
 msgid "Edit"
 msgstr "Editar"
 
-#: FMain.form:83
+#: FMain.form:85
 msgid "Undo"
 msgstr "Desfazer"
 
-#: FMain.form:87
+#: FMain.form:89
 msgid "Redo"
 msgstr "Refazer"
 
-#: FMain.form:94
+#: FMain.form:96
 msgid "Cut"
 msgstr "Recortar"
 
-#: FMain.form:98
+#: FMain.form:100
 msgid "Copy"
 msgstr "Copiar"
 
-#: FMain.form:102
+#: FMain.form:104
 msgid "Paste"
 msgstr "Colar"
 
-#: FMain.form:109
+#: FMain.form:111
 msgid "Search"
 msgstr "Pesquisar"
 
-#: FMain.form:114
+#: FMain.form:116
 msgid "View"
 msgstr "Exibir"
 
-#: FMain.form:117
+#: FMain.form:119
 msgid "Number of Lines"
 msgstr "Número de Linhas"
 
-#: FMain.form:121
+#: FMain.form:123
 msgid "Viewer"
 msgstr "Visualizador"
 
-#: FMain.form:128
+#: FMain.form:130
 msgid "Line Break"
 msgstr "Quebra de Linha"
 
-#: FMain.form:133
+#: FMain.form:135
 msgid "Formatting"
 msgstr "Formatação"
 
-#: FMain.form:136
+#: FMain.form:138
 msgid "Font"
 msgstr "Fonte"
 
-#: FMain.form:141
+#: FMain.form:143
 msgid "About"
 msgstr "Sobre"
 
-#: FMain.form:144
+#: FMain.form:146
+msgid "Check Update"
+msgstr "Verificar Atualizações"
+
+#: FMain.form:153
 msgid "Support MINotepad"
 msgstr "Apoie MINotepad"

@@ -4,7 +4,7 @@ It's a simple text editor for notes.
 
 ## Information
 
-- [Page MINotePad](https://www.mestredainfo.com.br/p/minotepad.html)
+- [Page MINotePad](https://www.mestredainfo.com.br/2024/12/minotepad.html)
 
 ## License
 

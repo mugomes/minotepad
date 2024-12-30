@@ -203,3 +203,9 @@ Public Sub txtEditor_KeyPress()
   sChange = True
   
 End
+
+Public Sub mnuCheckUpdate_Click()
+
+  Shell "xdg-open \"https://www.mestredainfo.com.br/2024/12/minotepad.html\""
+
+End

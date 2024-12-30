@@ -81,6 +81,11 @@
   }
   { Menu4 Menu
     Text = ("About")
+    { mnuCheckUpdate Menu
+      Text = ("Check Update")
+    }
+    { Menu12 Menu
+    }
     { mnuApoie Menu
       Text = ("Support MINotepad")
     }
