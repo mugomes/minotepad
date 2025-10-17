@@ -1,7 +1,7 @@
 # MINotepad
 
 > [!NOTE]
-> This repository is no longer maintained, I recommend using the [MiNota](https://github.com/mugomes/minota).
+> This project is no longer maintained, I recommend using the [MiNota](https://github.com/mugomes/minota).
 
 It's a simple text editor for notes.
 
