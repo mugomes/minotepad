@@ -2,10 +2,6 @@
 
 It's a simple text editor for notes.
 
-## Information
-
-- [Page MINotePad](https://www.mestredainfo.com.br/p/minotepad.html)
-
 ## License
 
 The MINotepad is provided under:
